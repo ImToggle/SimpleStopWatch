@@ -1,10 +1,10 @@
-package me.imtoggle.testmod
+package me.imtoggle.simplestopwatch
 
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 
-@Mod(modid = TestMod.MODID, name = TestMod.NAME, version = TestMod.VERSION, modLanguageAdapter = "cc.polyfrost.oneconfig.utils.KotlinLanguageAdapter")
-object TestMod {
+@Mod(modid = SimpleStopWatch.MODID, name = SimpleStopWatch.NAME, version = SimpleStopWatch.VERSION, modLanguageAdapter = "cc.polyfrost.oneconfig.utils.KotlinLanguageAdapter")
+object SimpleStopWatch {
     const val MODID = "@ID@"
     const val NAME = "@NAME@"
     const val VERSION = "@VER@"
