@@ -12,5 +12,6 @@ object SimpleStopWatch {
     @Mod.EventHandler
     fun onInit(event: FMLInitializationEvent) {
         ModConfig
+        EventHandler.initialize()
     }
 }

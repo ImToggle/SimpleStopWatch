@@ -19,22 +19,35 @@ class StopWatchHud : SingleTextHud("Time", true) {
     @Exclude
     private var running = false
 
+    @Exclude
+    private var text = ""
+
+    fun start() {
+        running = true
+        lastTime = System.currentTimeMillis()
+    }
+
+    fun reset() {
+        running = false
+        runTime = 0L
+    }
+
     fun onPress() {
         running = !running
         if (running) lastTime = System.currentTimeMillis()
     }
 
-    fun onReset() {
-        runTime = 0L
-    }
-
-    override fun getText(example: Boolean): String {
+    fun setText() {
         if (running) runTime += System.currentTimeMillis() - lastTime
         lastTime = System.currentTimeMillis()
         var second = runTime / 1000f
         val minute = floor(second / 60).toInt()
         second %= 60
-        return "$minute:${format.format(second)}"
+        text = "$minute:${format.format(second)}"
+    }
+
+    override fun getText(example: Boolean): String {
+        return text
     }
 
 }
